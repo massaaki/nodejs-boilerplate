@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "outDir": "dist",
     "target": "es2016",
     "module": "commonjs",
-    "rootDir": "./",
+    "rootDir": "src",
     "baseUrl": "src",
     "paths": {
       "@/*": [
@@ -16,5 +17,8 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
+  "include": [
+    "src"
+  ],
   "exclude": []
 }
