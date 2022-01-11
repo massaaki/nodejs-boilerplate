@@ -10,7 +10,14 @@ export class CreateAccountInMemory implements ICreateAccount {
 
   async create(account: CreateAccountProps): Promise<IAccount> {
     const { password } = account;
-    await this.hasher.hash(password);
-    return new Promise((resolve) => resolve(null));
+    const hash = await this.hasher.hash(password);
+    return new Promise((resolve) =>
+      resolve({
+        id: "some_id",
+        name: account.name,
+        email: account.email,
+        password: hash,
+      })
+    );
   }
 }

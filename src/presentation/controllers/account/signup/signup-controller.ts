@@ -18,7 +18,7 @@ export class SignupController implements IController {
       return success(account);
     } catch (error) {
       console.log(error);
+      return null;
     }
-    return new Promise((resolve) => resolve(null));
   }
 }
