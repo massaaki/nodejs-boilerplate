@@ -1,11 +1,11 @@
-import { Account } from '@/domain/entities/account'
+import { IAccount } from "@/domain/entities/account";
 
-export type CreateAccountModel = {
-  name: string
-  email: string
-  password: string
-}
+export type CreateAccountProps = {
+  name: string;
+  email: string;
+  password: string;
+};
 
-export interface CreateAccount {
-  create: (account: CreateAccountModel) => Promise<Account>
+export interface ICreateAccount {
+  create: (account: CreateAccountProps) => Promise<IAccount>;
 }

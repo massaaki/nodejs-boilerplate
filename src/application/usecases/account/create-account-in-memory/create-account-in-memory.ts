@@ -1,15 +1,16 @@
-import { Hasher } from '@/application/protocols/cryptography/Hasher'
-import { Account } from '@/domain/entities/account'
-import { CreateAccount, CreateAccountModel } from '@/domain/usecases/account/create-account'
+import { IHasher } from "@/application/protocols/cryptography/hasher";
+import { IAccount } from "@/domain/entities/account";
+import {
+  CreateAccountProps,
+  ICreateAccount,
+} from "@/domain/usecases/account/create-account";
 
-export class CreateAccountInMemory implements CreateAccount {
-  constructor (
-    private readonly hasher: Hasher
-  ) { }
+export class CreateAccountInMemory implements ICreateAccount {
+  constructor(private readonly hasher: IHasher) {}
 
-  async create (account: CreateAccountModel): Promise<Account> {
-    const { password } = account
-    this.hasher.hash(password)
-    return await new Promise(resolve => resolve({} as any))
+  async create(account: CreateAccountProps): Promise<IAccount> {
+    const { password } = account;
+    await this.hasher.hash(password);
+    return new Promise((resolve) => resolve(null));
   }
 }
