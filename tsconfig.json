@@ -2,19 +2,19 @@
   "compilerOptions": {
     "target": "es2016",
     "module": "commonjs",
+    "rootDir": "./",
     "baseUrl": "src",
     "paths": {
       "@/*": [
         "*"
       ]
     },
-    "allowJs": true,
-    "outDir": "dist",
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "skipLibCheck": true
+    "resolveJsonModule": true
   },
   "exclude": []
 }
