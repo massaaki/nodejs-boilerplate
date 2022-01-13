@@ -30,6 +30,7 @@
         "prettier"
     ],
     "rules": {
+        "max-classes-per-file": "off",
         "prettier/prettier": "error",
         "no-promise-executor-return": "off",
         "camelcase": "off",

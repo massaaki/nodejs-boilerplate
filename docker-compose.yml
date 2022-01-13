@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  boilerplate_postgres_database:
+    image: postgres
+    container_name: base_database
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=base_project
+    volumes:
+      - ./pgdata:/data/postgres
