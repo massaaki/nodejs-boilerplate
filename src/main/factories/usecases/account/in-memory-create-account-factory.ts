@@ -1,6 +1,6 @@
 import { CreateAccountInMemory } from "@/application/usecases/account/create-account-in-memory/create-account-in-memory";
 import { ICreateAccount } from "@/domain/usecases/account/create-account";
-import { BcryptAdapter } from "@/infra/bcrypt-adapter/bcrypt-adapter";
+import { BcryptAdapter } from "@/infra/criptography/bcrypt-adapter/bcrypt-adapter";
 
 export const makeInMemoryCreateAccount = (): ICreateAccount => {
   const bcryptAdapter = new BcryptAdapter();
