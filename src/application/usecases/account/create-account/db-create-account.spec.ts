@@ -1,7 +1,7 @@
 import { IHasher } from "@/application/protocols/cryptography/hasher";
-import { CreateAccountInMemory } from "@/application/usecases/account/create-account-in-memory/create-account-in-memory";
+import { DbCreateAccount } from "@/application/usecases/account/create-account/db-create-account";
 
-describe("CreateAccountInMemory Usecase", () => {
+describe("DbCreateAccount Usecase", () => {
   it("should call Hasher with correct password", async () => {
     class HasherStub implements IHasher {
       hash(): Promise<string> {
@@ -15,7 +15,7 @@ describe("CreateAccountInMemory Usecase", () => {
     };
 
     const hasherStub = new HasherStub();
-    const sut = new CreateAccountInMemory(hasherStub);
+    const sut = new DbCreateAccount(hasherStub);
 
     const hashSpy = jest.spyOn(hasherStub, "hash");
 

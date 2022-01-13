@@ -5,7 +5,7 @@ import {
   ICreateAccount,
 } from "@/domain/usecases/account/create-account";
 
-export class CreateAccountInMemory implements ICreateAccount {
+export class DbCreateAccount implements ICreateAccount {
   constructor(private readonly hasher: IHasher) {}
 
   async create(account: CreateAccountProps): Promise<IAccount> {
